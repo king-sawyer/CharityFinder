@@ -43,6 +43,7 @@ h1,
 h2 {
   color: white;
   text-shadow: 2px 2px black;
+  background-color: black;
 }
 
 .radioButtons {
