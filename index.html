@@ -51,24 +51,24 @@
 
 
     <form class="searchParameters">
-        <label for="searchText">Enter what you would like to search for here:</label>
-        <input type="text" id="searchText" name="search" placeholder="Keyword" required>
-        <input type="button" id="searchButton" name="search" value="Search"><br>
+        <label for="searchText" class="formItem">Enter what you would like to search for here:</label>
+        <input type="text" id="searchText" name="search" placeholder="Keyword" class="formItem" required>
+        <input type="button" id="searchButton" name="search" value="Search" class="formItem"><br>
 
-        <input type="button" id="additionalSearchButton" value="Search Options" class="searchButton">
+        <input type="button" id="additionalSearchButton" value="Search Options" class="searchButton formItem">
 
       <div class="additionalSearch" hidden>
 
-        <label for="pageSize">Number of search results per page:</label>
-        <select name="pageSize" id="pageSize">
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
+        <label for="pageSize" class="formItem">Number of search results per page:</label>
+        <select name="pageSize" id="pageSize" class="formItem">
+          <option value="5" class="formItem">5</option>
+          <option value="10" class="formItem">10</option>
+          <option value="15" class="formItem">15</option>
         </select>
         <br>
 
-        <label for="searchByState">Select State:</label>
-           <select name="search" id="searchByState">
+        <label for="searchByState" class="formItem">Select State:</label>
+           <select name="search" id="searchByState" class="formItem">
             <option value="none">None</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -123,21 +123,22 @@
             <option value="WY">Wyoming</option>
         </select> <br>
 
-        <input type="text" id="cityParam" name ="cityParam" value="None"><br>
-          <label for="cityParam"> Select City: </label>
+
+        <label for="cityParam" class="formItem"> Select City: </label>
+        <input type="text" id="cityParam" name ="cityParam" value="None" class="formItem"><br>
 
           
-        <label for="minRatingNum"> Min Rating: </label> 
-        <select name="minRatingNum" id="minRatingNum">
+        <label for="minRatingNum" class="formItem"> Min Rating: </label> 
+        <select name="minRatingNum" id="minRatingNum" class="formItem">
           <option value="none">None</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
-        </select>
+        </select> <br>
 
-        <label for="maxRatingNum"> Max Rating: </label>
-        <select name="maxRatingNum" id="maxRatingNum">
+        <label for="maxRatingNum" class="formItem"> Max Rating: </label>
+        <select name="maxRatingNum" id="maxRatingNum" class="formItem">
           <option value="none">None</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -146,8 +147,8 @@
         </select>
 
         <br>
-        <label for="sortBy">Sort By:</label>
-        <select id="sortBy" name="sortBy">
+        <label for="sortBy" class="formItem">Sort By:</label>
+        <select id="sortBy" name="sortBy" class="formItem">
           <option value="none">None</option>          <option value="NAME">Alphabetically</option>
           <option value="RATING">Rating</option>
           <option value="RELEVANCE">Relevance</option>
@@ -191,24 +192,34 @@
     </ul>
     <form class="radioButtons">
 
+      <label for="TRCOne"></label>
         <input type="radio" id="TRCOne" name="TRCSelector" checked>
+      <label for="TRCTwo"></label>
         <input type="radio" id="TRCTwo" name="TRCSelector">
+      <label for="TRCThree"></label>
         <input type="radio" id="TRCThree" name="TRCSelector">
+      <label for="TRCFour"></label>
         <input type="radio" id="TRCFour" name="TRCSelector">
+      <label for="TRCFive"></label>
         <input type="radio" id="TRCFive" name="TRCSelector">
 
     </form>
     </div>
 
-    <div class="topRatedInArea flexItem"><h3>Top Rated in Your Area:</h3>
+    <div class="topRatedInArea flexItem"><h3>Top Rated in Your State:</h3>
     <ul class="topRatedInAreaList list">
     </ul>
      <form class="radioButtons">
 
+      <label for="TRNYOne"></label>
         <input type="radio" id="TRNYOne" name="TRNYSelector" checked>
+      <label for="TRNYTwo"></label>
         <input type="radio" id="TRNYTwo" name="TRNYSelector">
+      <label for="TRNYThree"></label>
         <input type="radio" id="TRNYThree" name="TRNYSelector">
+      <label for="TRNYFour"></label>
         <input type="radio" id="TRNYFour" name="TRNYSelector">
+      <label for="TRNYFive"></label>
         <input type="radio" id="TRNYFive" name="TRNYSelector">
 
 
