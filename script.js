@@ -3,7 +3,7 @@
 const app_id = "52f5ab7b";
 const app_key = "8b5bffc3a1fe815f4e114e1feaa433d3";
 const url = "https://api.data.charitynavigator.org/v2/Organizations?";
-const addressURL = "";
+const ipAddressKey = "334080763c52339cac84c93c8a55bb4d6efe17d73f18c7df8a4a6904";
 
 //this function watches the seach button for searches
 function waitForClick() {
@@ -105,26 +105,51 @@ function updateTopRatedCharities(data) {
 }
 
 //this function uses the geolocator api to get the users ip address
+// function fetchIPAddress() {
+//   fetch("https://freegeoip.app/json/")
+//     .then((response) => response.json())
+//     .then((data) => fetchForTRNY(data))
+//     .catch($('.topRatedInAreaList').html(`Whoops! It looks like there was an error in searching for charities in your state.`))
+// }
+
+
+
+
 function fetchIPAddress() {
-  fetch("https://freegeoip.app/json/")
+
+  fetch("http://api.ipify.org/?format=json")
     .then((response) => response.json())
-    .then((data) => fetchForTRNY(data))
-    .catch($('.topRatedInAreaList').html(`Whoops! It looks like there was an error in searching for charities in your state.`))
+    .then((data) => handleIPAddress(data));
 }
+
+
+function handleIPAddress(data){
+
+fetch(`http://ip-api.com/json/${data.ip}`)
+.then(response => response.json())
+.then(data => fetchForTRNY(data))
+
+}
+
+
+
 
 
 //this function fetches information for the random top rated charities on the home page
 function fetchForTRNY(data) {
-  fetch(
-    `https://api.data.charitynavigator.org/v2/Organizations?app_id=52f5ab7b&app_key=8b5bffc3a1fe815f4e114e1feaa433d3&state=${data.region_code}&minRating=4`
-  )
+  console.log(data)
+   
+  let TRNYurl =  `https://api.data.charitynavigator.org/v2/Organizations?app_id=52f5ab7b&app_key=8b5bffc3a1fe815f4e114e1feaa433d3&state=${data.region}&minRating=4`;
+
+
+  fetch(TRNYurl)
     .then((response) => response.json())
     .then((data) => updateTRNYdom(data));
-}
+ }
 
 //this function updates the top rated section of the DOM
 function updateTRNYdom(data) {
-  $(".topRatedInAreaList").append(`
+  $(".topRatedInAreaList").html(`
 <li>
 <h4>${data[0].charityName} </h4> <br>
 "${data[0].tagLine}" <br>
