@@ -104,15 +104,6 @@ function updateTopRatedCharities(data) {
   });
 }
 
-//this function uses the geolocator api to get the users ip address
-// function fetchIPAddress() {
-//   fetch("https://freegeoip.app/json/")
-//     .then((response) => response.json())
-//     .then((data) => fetchForTRNY(data))
-//     .catch($('.topRatedInAreaList').html(`Whoops! It looks like there was an error in searching for charities in your state.`))
-// }
-
-
 
 
 function fetchIPAddress() {
@@ -137,7 +128,6 @@ fetch(`https://api.ipdata.co/${data.ip}?api-key=334080763c52339cac84c93c8a55bb4d
 
 //this function fetches information for the random top rated charities on the home page
 function fetchForTRNY(data) {
-  console.log(data)
    
   let TRNYurl =  `https://api.data.charitynavigator.org/v2/Organizations?app_id=52f5ab7b&app_key=8b5bffc3a1fe815f4e114e1feaa433d3&state=${data.region_code}&minRating=4`;
 
