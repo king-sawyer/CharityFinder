@@ -117,7 +117,7 @@ function updateTopRatedCharities(data) {
 
 function fetchIPAddress() {
 
-  fetch("http://api.ipify.org/?format=json")
+  fetch("https://api.ipify.org/?format=json")
     .then((response) => response.json())
     .then((data) => handleIPAddress(data));
 }
@@ -125,7 +125,7 @@ function fetchIPAddress() {
 
 function handleIPAddress(data){
 
-fetch(`http://ip-api.com/json/${data.ip}`)
+fetch(`https://api.ipdata.co/${data.ip}?api-key=334080763c52339cac84c93c8a55bb4d6efe17d73f18c7df8a4a6904`)
 .then(response => response.json())
 .then(data => fetchForTRNY(data))
 
@@ -139,7 +139,7 @@ fetch(`http://ip-api.com/json/${data.ip}`)
 function fetchForTRNY(data) {
   console.log(data)
    
-  let TRNYurl =  `https://api.data.charitynavigator.org/v2/Organizations?app_id=52f5ab7b&app_key=8b5bffc3a1fe815f4e114e1feaa433d3&state=${data.region}&minRating=4`;
+  let TRNYurl =  `https://api.data.charitynavigator.org/v2/Organizations?app_id=52f5ab7b&app_key=8b5bffc3a1fe815f4e114e1feaa433d3&state=${data.region_code}&minRating=4`;
 
 
   fetch(TRNYurl)
